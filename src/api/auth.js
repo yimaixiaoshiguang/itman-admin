@@ -1,4 +1,4 @@
-const TokenKey = 'cpms-Token'
+const TokenKey = 'mvk-Token'
 
 export function getToken() {
 	return sessionStorage.getItem(TokenKey)
@@ -14,7 +14,7 @@ export function removeToken() {
 
 export function removeAllSessionItem() {
 	Object.keys(sessionStorage).forEach(key => {
-		if(key.indexOf('cpms') > -1){
+		if(key.indexOf('mvk') > -1){
 			sessionStorage.removeItem(key)
 		}
 	} )
