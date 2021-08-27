@@ -1,57 +1,49 @@
 <template>
 	<div class="navbar">
-		<hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
-		<logout />
+		<hamburger v-if="hamburgerPosition == 'navbar'"/>
+		<breadcrumb class="breadcrumb-container" />
+		<div>
+			<logout />
+			<icon-svg icon="more"></icon-svg>
+		</div>
 	</div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-
-import Hamburger from '@/components/Hamburger';
-import logout from '@/views/components/logout';
+import Breadcrumb from './Breadcrumb.vue';
+import Hamburger from './Hamburger.vue';
+import logout from '../business/Logout';
 
 export default {
 	components: {
 		Hamburger,
+		Breadcrumb,
 		logout
 	},
 	computed: {
 		...mapGetters(['sidebar']),
+		
+		hamburgerPosition() {
+			return this.$store.state.settings.hamburgerPosition;
+		}
 	},
 	methods: {
-		toggleSideBar() {
-			this.$store.dispatch('app/toggleSideBar');
-		},
 	}
 };
 </script>
 
 <style lang="scss" scoped>
 .navbar {
-	height: 60px;
-	overflow: hidden;
-	position: relative;
-	background: #212225;
-	box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-
-	.hamburger-container {
-		line-height: 56px;
-		height: 100%;
-		float: left;
-		cursor: pointer;
-		transition: background 0.3s;
-		-webkit-tap-highlight-color: transparent;
-
-		&:hover {
-			background: rgba(255, 255, 255, 0.3);
-		}
-	}
+	display: flex;
+	flex: 1;
 
 	.breadcrumb-container {
-		float: left;
+		flex: 1;
+		display: flex;
+		align-items: center;
 	}
+
 	
 	&.navbar-imgbg {
 		background: #000;

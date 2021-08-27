@@ -1,0 +1,84 @@
+// cover some element-ui styles
+.el-card.is-always-shadow {
+	border: none;
+	box-shadow: 0 0 10px 0 rgba(158,164,194,.2);
+}
+
+.el-card.is-hover-shadow:focus, .el-card.is-hover-shadow:hover {
+	box-shadow: 0 0 40px 0 rgba(158,164,194,.3);
+}
+
+.el-tree-node__content {
+	height: 30px;
+}
+
+.el-drawer__header {
+	margin-bottom: 0;
+	padding: 14px 16px;
+	border-bottom: 1px solid #e8eaec;
+}
+
+.el-drawer__body {
+	padding: 16px;
+}
+
+.el-dialog__header {
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.el-card__header {
+	padding: 10px;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+    background-color: #eaf2fd;
+}
+
+.el-table__body tr.current-row>td {
+    background-color: #c4e0ff;
+}
+
+.el-drawer__body {
+	height: 100%;
+}
+
+.el-dialog__wrapper {
+	transition-duration: 0.3s;
+}
+.dialog-fade-enter-active{
+	animation: none !important;
+}
+.dialog-fade-leave-active {
+	transition-duration: 0.15s !important;
+	animation: none !important;
+  }
+
+.dialog-fade-enter-active .el-dialog,
+.dialog-fade-leave-active .el-dialog{
+	animation-fill-mode: forwards;
+}
+
+.dialog-fade-enter-active .el-dialog{
+	animation-duration: 0.3s;
+	animation-name: anim-open;
+	animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+}
+
+.dialog-fade-leave-active .el-dialog{
+	animation-duration: 0.3s;
+	animation-name: anim-close;
+}
+
+
+@keyframes anim-open {
+	0% { opacity: 0;  transform: scale3d(0, 0, 1); }
+	100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+
+@keyframes anim-close {
+	0% { opacity: 1; }
+	100% { opacity: 0; transform: scale3d(0.5, 0.5, 1); }
+}
+
+

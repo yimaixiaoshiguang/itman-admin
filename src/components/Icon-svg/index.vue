@@ -1,6 +1,11 @@
 <template>
-	<svg class="svg-icon" aria-hidden="true" :style="styles">
-		<title>{{title}}</title>
+	<el-tooltip effect="dark" :content="title" v-if="title">
+		<svg class="svg-icon" aria-hidden="true" :style="styles">
+			<use :xlink:href="iconName"></use>
+		</svg>
+	</el-tooltip>
+		
+	<svg class="svg-icon" aria-hidden="true" :style="styles" v-else>
 		<use :xlink:href="iconName"></use>
 	</svg>
 </template>
@@ -44,7 +49,7 @@
 </script>
 <style>
 	.svg-icon {
-		font-size: 48px;
+		font-size: 16px;
 		width: 1em;
 	    height: 1em;
 	    vertical-align: -0.15em;

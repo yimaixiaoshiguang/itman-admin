@@ -1,0 +1,77 @@
+.mvk-layout-sider {
+    display: flex;
+    flex-direction: column;
+    width: $siderWidth;
+    min-height: 100vh;
+    flex: 0 0 $siderWidth;
+    z-index: 10;
+    background-color: $sideLightColor;
+    box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
+    transition: all .2s ease-in-out;
+    
+
+    &-fixed {
+        position: fixed;
+        left: 0;
+        top: 0;
+
+        // +.mvk-layout-inside {
+        //     padding-left: $siderWidth;
+        // }
+    }
+
+    .mvk-hamburger-container {
+        width: $siderWidth !important;
+        transition: all .2s ease-in-out;
+    }
+
+    &-collapse {
+        width: $sideWidthCollapse;
+        flex: 0 0 $sideWidthCollapse;
+
+        .mvk-hamburger-container {
+            width: $sideWidthCollapse !important;
+        }
+    }
+
+    &-dark {
+        background-color: $sideDarkColor;
+        box-shadow: 2px 0 6px rgb(0 21 41 / 35%);
+        color: $sideDarkTextColor;
+    }
+
+    
+}
+
+/**和element ui 有关的样式修改 */
+.mvk-layout-sider{
+    .el-menu {
+        border-right: none;
+    }
+
+    .el-submenu__title, .el-menu-item {
+        color: $sideLightTextColor;
+    }
+
+    .el-menu-item.is-active {
+        color: $sideLightTextActivColor;
+    }
+    &-dark {
+        .el-menu {
+            background-color: $sideDarkColor !important;
+        }
+
+        .el-submenu__title, .el-menu-item {
+            color: $sideDarkTextColor;
+        }
+
+        .el-menu-item.is-active {
+            color: $sideLightTextActivColor;
+        }
+
+        .el-menu-item:focus, .el-menu-item:hover, .el-submenu__title:hover {
+            background-color: rgb(236 245 255 / 30%);
+        }
+    }
+    
+}

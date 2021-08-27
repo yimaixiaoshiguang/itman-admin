@@ -20,7 +20,7 @@ const sysBaseRouter = {
 	meta:{title:'系统管理',icon:'sys'},
 	children:[
 		{
-			path: 'userInfo',
+			path: '/sysManager/userInfo',
 			name: 'userInfo',
 			meta: { 
 		    	title: '用户管理',
@@ -29,7 +29,7 @@ const sysBaseRouter = {
 			component: () => import('@/views/basePage/userInfo'),
 		},
 		{
-			path: 'roleInfo',
+			path: '/sysManager/roleInfo',
 			name: 'rolesManager',
 			meta: { 
 		    	title: '角色管理',
@@ -37,7 +37,7 @@ const sysBaseRouter = {
 		    },
 			component: () => import('@/views/basePage/roleInfo'),
 		},{
-			path: 'menuInfo',
+			path: '/sysManager/menuInfo',
 			name: 'menuManager',
 			meta: { 
 		    	title: '菜单管理',

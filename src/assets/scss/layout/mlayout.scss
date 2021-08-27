@@ -1,0 +1,29 @@
+@import './mheader.scss';
+@import './msider.scss';
+@import './minside.scss';
+@import './mlogo.scss';
+@import './mtags.scss';
+
+.mvk-hamburger-container {
+    width: $headerHeight;
+    height: $headerHeight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background: rgb(66 161 255 / 30%);
+    }
+}
+
+.mvk-layout-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mvk-layout-content-main {
+    flex: 1;
+    padding: $contentPadding;
+}

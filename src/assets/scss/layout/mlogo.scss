@@ -1,0 +1,44 @@
+.siderLogoFade-enter-active {
+    transition: opacity 1.5s;
+}
+
+.siderLogoFade-enter,
+.siderLogoFade-leave-to {
+    opacity: 0;
+}
+
+.mvk-sider-logo-container {
+    position: relative;
+    width: $siderWidth;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    padding: 0 20px;
+    overflow: hidden;
+    & .sider-logo-link {
+        height: 100%;
+        width: 100%;
+        & .sider-logo {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+        & .sider-title {
+            display: inline-block;
+            margin: 0;
+            font-weight: 400;
+            line-height: $headerHeight;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            vertical-align: middle;
+        }
+    }
+    &.collapse {
+        width: $sideWidthCollapse;
+        padding: 0;
+        text-align: center;
+        .sider-logo {
+            margin-right: 0px;
+        }
+    }
+}

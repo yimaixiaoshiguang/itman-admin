@@ -1,0 +1,31 @@
+.mvk-tags-view {
+    width: 100%;
+    background-color: $mainbg;
+    transition: all .2s ease-in-out;
+    z-index: 2;
+
+    &-main {
+        display: flex;
+        padding: $contentPadding;
+    }
+
+    +.mvk-layout-content-main {
+        padding-top: 0;
+        transition: all .2s ease-in-out;
+    }
+
+    &-fixed {
+        position: fixed;
+        width: calc(100vw - #{$siderWidth});
+        left: $siderWidth;
+
+        +.mvk-layout-content-main {
+            padding-top: 50px;
+        }
+    }
+
+    &-sider-collapse {
+        width: calc(100vw - #{$sideWidthCollapse});
+        left: $sideWidthCollapse;
+    }
+}

@@ -1,29 +1,27 @@
 import defaultSettings from '@/settings'
 
-const {
-	showSettings,
-	fixedHeader,
-	sidebarLogo,
-	tagsView,
-	title,
-	logo
-} = defaultSettings
+// const {
+// 	siderTheme,
+// 	fixedSider,
+// 	headerTheme,
+// 	showSettings,
+// 	fixedHeader,
+// 	sidebarLogo,
+// 	tagsView,
+// 	title,
+// 	logo,
+// 	hamburgerPosition
+// } = defaultSettings
 
-const state = {
-	showSettings: showSettings,
-	tagsView: tagsView,
-	fixedHeader: fixedHeader,
-	sidebarLogo: sidebarLogo,
-	title:title,
-	logo:logo
-}
+const state = {...defaultSettings}
 
 const mutations = {
 	CHANGE_SETTING: (state, {
 		key,
 		value
 	}) => {
-		if(state.hasOwnProperty(key)) {
+		if (state.hasOwnProperty(key)) {
+			
 			state[key] = value
 		}
 	}

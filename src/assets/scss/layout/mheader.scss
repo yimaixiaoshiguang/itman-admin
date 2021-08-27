@@ -1,0 +1,40 @@
+.mvk-layout-header {
+    width: 100%;
+    height: $headerHeight;
+    color: $sideLightTextColor;
+    background: $headerLight;
+    z-index: 1;
+    display: flex;
+    box-shadow: 2px 1px 4px rgb(0 21 41 / 8%);
+    transition: all .2s ease-in-out;
+    
+    &-dark {
+        background-color: $headerDark;
+        color: $sideDarkTextColor;
+    }
+
+    &-primary {
+        background: $headerPrimary;
+        color: #fff;
+    }
+
+    &-fixed {
+        position: fixed;
+        left: $siderWidth;
+        top: 0;
+
+        +.mvk-layout-content {
+            padding-top: $headerHeight;
+        }
+    }
+
+    &-sider-collapse {
+        left: $sideWidthCollapse;
+    }
+
+    &-stick {
+        left: 0;
+        z-index: 13;
+        
+    }
+}

@@ -5,7 +5,7 @@
 			    <div class="login-header">
 			        <!-- <span class="login-header-title">{{appTitle}}</span> -->
 			        <img src="@/assets/logo.png" style="width: 200px;">
-			        <span>数据平台管理系统12</span>
+			        <span>{{title}}</span>
 			    </div>
 			    <el-form-item prop="account" label="账户">
 			        <el-input placeholder="请输入账户" v-model="loginForm.account">
@@ -56,12 +56,15 @@
             }
         },
         computed:{
+			title() {
+				return this.$store.state.settings.title
+			},
         },
         methods:{
             loginSubmit(formName){
 				this.$refs[formName].validate((valid) => {
 				    if (valid) {
-						
+						this.$router.push('/sysManager')
 					}else{
 						return false
 					}

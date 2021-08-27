@@ -48,7 +48,7 @@ export default {
 						withoutAnimation: true
 					})
 				}else {
-					var preSidebarStatus = sessionStorage.getItem('tg-preSidebarStatus')
+					var preSidebarStatus = sessionStorage.getItem('mvk-preSidebarStatus')
 					if(preSidebarStatus){
 						store.commit('app/SET_SIDEBAR', preSidebarStatus)
 					}

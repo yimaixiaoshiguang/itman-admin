@@ -9,10 +9,7 @@ Vue.use(ElementUI);
 
 import '@/assets/scss/index.scss' // global css
 
-//icon
-import './assets/iconfont/iconfont';
-import IconSvg from './components/Icon-svg';
-Vue.component('icon-svg', IconSvg)
+import '@/components/components'
 
 Vue.config.productionTip = false
 
