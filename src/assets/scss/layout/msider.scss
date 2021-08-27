@@ -8,7 +8,7 @@
     background-color: $sideLightColor;
     box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
     transition: all .2s ease-in-out;
-    
+
 
     &-fixed {
         position: fixed;
@@ -41,7 +41,7 @@
         color: $sideDarkTextColor;
     }
 
-    
+
 }
 
 /**和element ui 有关的样式修改 */
@@ -63,10 +63,15 @@
     }
 
     .mvk-menu {
-        padding: 0 16px;      
-        
+        padding: 0 16px;
+
         &.el-menu--collapse {
             padding: 0 11px;
+
+			.el-submenu__icon-arrow {
+				transition: all .2s ease-in-out;
+				z-index: -1;
+			}
 
             .el-submenu__title {
                 padding: 0 9px !important;
@@ -100,7 +105,7 @@
             background-color: rgb(236 245 255 / 30%);
         }
 
-        
+
 
         .el-menu--collapse {
             .el-submenu.is-active {
@@ -108,8 +113,10 @@
                     color: #fff;
                     background-image: $sideDarkBgActivColor;
                 }
+
+
             }
         }
     }
-    
+
 }

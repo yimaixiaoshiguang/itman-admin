@@ -89,6 +89,7 @@ export const constantRoutes = [
 		name: 'setting',
 		meta: {
 			title: '系统设置',
+			icon:'sys'
 		},
 		component: () => import('views/layout/index'),
 		children: [
