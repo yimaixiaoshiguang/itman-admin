@@ -11,7 +11,7 @@
  */
 
 import Layout from '@/views/layout/index'
-
+import SubLayout from '@/views/layout/subIndex'
 const sysBaseRouter = {
 	path:'/sysManager',
 	name:'sysManager',
@@ -22,30 +22,31 @@ const sysBaseRouter = {
 		{
 			path: '/sysManager/userInfo',
 			name: 'userInfo',
-			meta: { 
-		    	title: '用户管理',
-		    	icon:'yonghu',
+			meta: {
+		    	title: '平台用户',
+		    	// icon:'yonghu',
 		    },
-			component: () => import('@/views/basePage/userInfo'),
+			component: () => import('@/views/basePage/user/userInfo'),
 		},
 		{
 			path: '/sysManager/roleInfo',
 			name: 'rolesManager',
-			meta: { 
+			meta: {
 		    	title: '角色管理',
-		    	icon:'role',
+		    	// icon:'role',
 		    },
-			component: () => import('@/views/basePage/roleInfo'),
-		},{
+			component: () => import('@/views/basePage/role/roleInfo'),
+		},
+		{
 			path: '/sysManager/menuInfo',
 			name: 'menuManager',
-			meta: { 
+			meta: {
 		    	title: '菜单管理',
-		    	icon:'caidan',
+		    	// icon:'caidan',
 		    },
-			component: () => import('@/views/basePage/menuInfo'),
+			component: () => import('@/views/basePage/menu/index'),
 		},
-		
+
 	]
 }
 

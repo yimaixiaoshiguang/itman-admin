@@ -1,36 +1,15 @@
-// sidebar
-$menuText:#a6a6a6;
-$menuActiveText:#0fc6c9;
-$subMenuActiveText:#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
-
-$menuBg:#191a23;
-$menuActivity: #3d4247;
-$menuHover:#263445;
-
-$subMenuBg:#212225;
-$subMenuHover:#001528;
-
-$sideBarWidth: 270px;
-
-$primary:#7579ff;
-$light:#5ab9ff;
-
-$fontSizeBase:16px;
-
-$headHeight:50px;
-$headbg:#212225;
-
-$textColor:#a6a6a6;
-
-
+$primary:#4B5EFF;
+$primaryGradient:linear-gradient(to right, #4F8AFF 0%, #4B5EFF 100%);
 
 //左侧栏sider属性
-$siderWidth:256px;
+$siderWidth:250px;
 $sideWidthCollapse:64px;
 
-$sideDarkColor:#191a23;
+$sideDarkColor:#222653;
 $sideDarkTextColor:hsla(0,0%,100%,.7);
-$sideDarkTextActivColor:#409EFF;
+$sideDarkTextActivColor:#4F8AFF;
+$sideDarkBgActivColor:linear-gradient(to right, #4F8AFF 0%, #4B5EFF 100%);
+
 
 $sideLightColor:#fff;
 $sideLightTextColor:#515a6e;
@@ -43,7 +22,7 @@ $headerDark:#191a23;
 $headerPrimary:#2173dc;
 
 //内部内容区
-$mainbg:#f5f7f9;
+$mainbg:#F5F5FA;
 $contentPadding:15px;
 
 
@@ -51,15 +30,5 @@ $contentPadding:15px;
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
-    menuText: $menuText;
-    menuActiveText: $menuActiveText;
-    subMenuActiveText: $subMenuActiveText;
-    menuBg: $menuBg;
-    menuHover: $menuHover;
-    subMenuBg: $subMenuBg;
-    subMenuHover: $subMenuHover;
-    sideBarWidth: $sideBarWidth;
-    headHeight: $headHeight;
-    headbg:$headbg;
     mainbg:$mainbg;
 }

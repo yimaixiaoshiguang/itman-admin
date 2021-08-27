@@ -19,5 +19,11 @@ Vue.component('delete-button', DeleteButton)
 import CollapsePane from './CollapsePane.vue'
 Vue.component('collapse-pane', CollapsePane)
 
-import splitPane from 'vue-splitpane'
-Vue.component('split-pane',splitPane)
+import MvkTable from './Table/index'
+Vue.component('mvk-table', MvkTable)
+
+import MvkSelect from './SelectPage/index'
+Vue.component('mvk-select-page', MvkSelect)
+
+import MvkInput from './Input/index'
+Vue.component('mvk-input', MvkInput)

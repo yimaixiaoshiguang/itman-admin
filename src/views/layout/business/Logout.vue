@@ -1,14 +1,25 @@
 <template>
-	<div class="header-user">
+	<!-- <div class="header-user">
 	    <span class="header-user-item">
 	        <icon-svg icon="yonghu" size="20" style="margin: -3px 6px;"></icon-svg>
-	        <!-- <span>{{name}}</span> -->
+	        <span>{{name}}</span>
 	    </span>
 	    <el-divider direction="vertical"></el-divider>
 	    <span class="header-user-item" @click="logout">
 	        <icon-svg icon="tuichu" size="20" style="margin:-3px 6px;" title="退出系统" @click="logout"></icon-svg>
 	    </span>
-	</div>
+	</div> -->
+    <el-dropdown class="header-user" trigger="click" @command="handleCommand" style="cursor:pointer">
+        <span class="el-dropdown-link">
+            <span>{{name}}</span><i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="dashboard">主页</el-dropdown-item>
+            <el-dropdown-item command="personal">个人中心</el-dropdown-item>
+			<el-dropdown-item command="reset">修改密码</el-dropdown-item>
+            <el-dropdown-item divided command="logout">退出系统</el-dropdown-item>
+        </el-dropdown-menu>
+        </el-dropdown>
 </template>
 
 <script>
@@ -19,23 +30,37 @@
         },
         data(){
             return {
-				name:'admin'
             }
         },
         computed:{
+            name(){
+                return this.$store.state.user.username || sessionStorage.getItem('eshop-username')
+            }
         },
         methods:{
             ...mapActions('user',['LogOut']),
             logout(){
 				this.LogOut().then(() => {
                     this.$router.push('/')
-                    location.reload()
+                    // location.reload()
                 })
-			}
+			},
+
+            handleCommand(type){
+                if(type == 'dashboard'){
+                    this.$router.push('/dashboard/index')
+                }else if(type == 'personal'){
+                    this.$router.push('/personal/info')
+                }else if(type == 'reset'){
+                    this.$router.push('/reset/password')
+                }else if(type == 'logout'){
+                    this.logout()
+                }
+            }
         },
         mounted(){
         }
-        
+
     }
 </script>
 

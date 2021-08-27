@@ -27,3 +27,17 @@
     flex: 1;
     padding: $contentPadding;
 }
+
+.mvk-layout-content-card {
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgb(158 164 194 / 20%);
+}
+
+.mvk-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #808695;
+    padding: 15px;
+}

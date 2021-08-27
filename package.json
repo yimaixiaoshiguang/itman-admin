@@ -1,20 +1,20 @@
 {
-  "name": "admin-demo",
+  "name": "mvk-eshop-platform",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
+    "alpha": "vue-cli-service build --mode alpha",
     "build": "vue-cli-service build"
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "codemirror": "5.30.0",
-    "nprogress": "^0.2.0",
-    "core-js": "^3.6.5",
-    "js-cookie": "^2.2.1",
+    "echarts": "^5.1.2",
     "element-ui": "^2.14.1",
+    "js-cookie": "^2.2.1",
+    "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
     "path-to-regexp": "2.4.0",
-    "vue-splitpane": "^1.0.6",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"

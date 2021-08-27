@@ -1,8 +1,13 @@
 .mvk-tags-view {
-    width: 100%;
+    width: calc(100vw - #{$siderWidth});
     background-color: $mainbg;
     transition: all .2s ease-in-out;
     z-index: 2;
+    // border-bottom: 1px solid #d8dce5;
+    // -webkit-box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
+    // box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%), 0 0 3px 0 rgb(0 0 0 / 4%);
+    // margin-bottom: $contentPadding;
+
 
     &-main {
         display: flex;
@@ -20,12 +25,76 @@
         left: $siderWidth;
 
         +.mvk-layout-content-main {
-            padding-top: 50px;
+            padding-top: 60px;
         }
     }
 
     &-sider-collapse {
         width: calc(100vw - #{$sideWidthCollapse});
         left: $sideWidthCollapse;
+    }
+}
+
+//修改element ui的样式
+.mvk-tags-view {
+    &-main {
+        .el-tabs {
+            flex: 1;
+            width: calc(100% - 50px);
+        }
+
+        .el-tabs--card>.el-tabs__header {
+            border: none;
+            margin: 0;
+        }
+
+        .el-tabs--card>.el-tabs__header .el-tabs__nav {
+            border: none;
+        }
+
+        .el-tabs--card>.el-tabs__header .el-tabs__item {
+            border: none;
+        }
+
+        .el-tabs--card>.el-tabs__header .el-tabs__item .el-icon-close {
+            width: 14px;
+        }
+
+        .el-tabs__item {
+            margin: 0 3px;
+            padding: 0 15px;
+            position: relative;
+            height: 32px;
+            line-height: 32px;
+            color: #808695;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        .el-tabs__item:before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: #e8eaec;
+        }
+
+        .is-active:before {
+            background: $primary;
+        }
+
+        .btn {
+            padding: 9px;
+        }
+
+        .el-icon--right {
+            margin-left:0px
+        }
+
+        .el-tabs__nav-next, .el-tabs__nav-prev {
+            line-height: 30px;
+        }
     }
 }

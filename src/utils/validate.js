@@ -46,3 +46,26 @@ function padLeftZero(str) {
 	return ('00' + str).substr(str.length);
 }
 
+
+//去掉日期数据中的T和Z
+export function formatTime(time) {
+	var date=new Date(+new Date(time)).toISOString().replace(/T/g,' ').replace(/\.[\d]{3}Z/,'')
+    return date
+}
+
+/**
+ * 手机号码
+ * @param {*} s
+ */
+export function isMobile (s) {
+	return /^1[0-9]{10}$/.test(s)
+}
+
+/**
+ * 是否中文
+ * @param {*} s
+ * @returns
+ */
+export function isChinese(s) {
+	return /[\u4e00-\u9fa5]+$/.test(s)
+}

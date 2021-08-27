@@ -3,7 +3,8 @@
         <el-tag
             :key="tag"
             v-for="tag in dynamicTags"
-            closable
+            :closable="showAddBtn"
+            size="larger"
             :disable-transitions="false"
             @close="handleClose(tag)">
             {{tag}}
@@ -11,14 +12,14 @@
         <el-input
             class="input-new-tag"
             v-if="inputVisible"
-            v-model="inputValue"
+            v-model.trim="inputValue"
             ref="saveTagInput"
             size="small"
             @keyup.enter.native="handleInputConfirm"
             @blur="handleInputConfirm"
             >
         </el-input>
-        <el-button v-else class="button-new-tag" size="small" @click="showInput">+ 添加</el-button>
+        <el-button v-else class="button-new-tag" size="small" @click="showInput" v-show="showAddBtn">+ 添加</el-button>
     </div>
 </template>
 <script>
@@ -29,6 +30,10 @@
                 type:Array,
                 require:true,
                 default:[]
+            },
+            showAddBtn:{
+                type:Boolean,
+                default:true
             }
         },
         data() {
@@ -43,6 +48,7 @@
         methods: {
             handleClose(tag) {
                 this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+                this.$emit('deleteTag');
             },
 
             showInput() {
@@ -56,6 +62,7 @@
                 let inputValue = this.inputValue;
                 if (inputValue && this.dynamicTags.indexOf(inputValue) == '-1') {
                     this.dynamicTags.push(inputValue);
+                    this.$emit('addTag');
                 }
 
                 this.inputVisible = false;
@@ -65,11 +72,12 @@
     };
 </script>
 <style lang="scss" scoped>
-    .el-tag + .el-tag {
+    .el-tag + .el-tag,.el-tag + .button-new-tag,.el-tag + .input-new-tag {
         margin-left: 10px;
     }
+
+    
     .button-new-tag {
-        margin-left: 10px;
         height: 32px;
         line-height: 30px;
         padding-top: 0;
@@ -77,7 +85,6 @@
     }
     .input-new-tag {
         width: 90px;
-        margin-left: 10px;
         vertical-align: bottom;
     }
 </style>

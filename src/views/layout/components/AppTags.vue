@@ -56,7 +56,7 @@
 			tagsClass(){
 				return {
 					'mvk-tags-view-fixed':this.tagsFixed,
-					'mvk-tags-view-sider-collapse':this.tagsFixed && this.collapse
+					'mvk-tags-view-sider-collapse':this.collapse
 				}
 			},
 		},

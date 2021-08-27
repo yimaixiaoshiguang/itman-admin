@@ -4,6 +4,7 @@
 @import './app.scss';
 @import './layout/mlayout.scss';
 @import './element-ui.scss';
+@import './bussiness.scss'; //业务相关的样式
 
 
 html, body {
@@ -81,7 +82,7 @@ a + .el-button {
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 10px;
-	
+
 	& .el-input__inner{
 		width: 100px;
 		height: 30px;
@@ -93,7 +94,7 @@ a + .el-button {
 }
 
 .border-table {
-	/*margin-top: 20px;*/ 
+	/*margin-top: 20px;*/
 	border-top: 1px solid #EBEEF5;
 	border-left: 1px solid #EBEEF5;
 	border-right: 1px solid #EBEEF5;
@@ -108,17 +109,17 @@ a + .el-button {
 		border-left: 1px solid #EBEEF5;
     	border-right: 1px solid #EBEEF5;
 	}
-	
+
 	.el-collapse-item__header {
 		padding: 12px;
 		border-bottom: 1px solid #EBEEF5;
 		font-weight: 700;
 	}
-	
+
 	.el-collapse-item__content {
 		padding: 12px;
 	}
-	
+
 	.el-collapse-item + .el-collapse-item {
 		border-top: 1px solid #EBEEF5;
 		margin-top: 20px;
@@ -135,7 +136,7 @@ a + .el-button {
     margin-bottom: 25px;
     border-radius: 4px;
     -webkit-font-smoothing: auto;
-    
+
     section {
     	font-family: Menlo,Monaco,Consolas,Courier,monospace;
     }
@@ -173,6 +174,15 @@ a + .el-button {
 	background: #fff;
 	z-index: 1;
 	flex: 1;
+}
+
+.custom-tree-node {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
+	padding-right: 8px;
 }
 
 .el-list {
@@ -229,9 +239,17 @@ a + .el-button {
 	justify-content: center;
 }
 
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
 .height100{
 	height: 100%;
 	overflow-y: auto;
+}
+
+.width100 {
+	width: 100%;
 }
 
 .card-container {
@@ -249,11 +267,74 @@ a + .el-button {
 	touch-action: none;
 }
 
+.inputWidth {
+	width: 400px;
+}
+
+.add-btn {
+	margin-bottom: 15px;
+}
+
+.ml8{
+	margin-left: 8px;
+}
+.mr8{
+	margin-right: 8px;
+}
+
+.ml10{
+	margin-left: 10px;
+}
+
+.ml20{
+	margin-left: 20px;
+}
+
+.mr10{
+	margin-right: 10px;
+}
+.mr15{
+	margin-right: 15px;
+}
+.mr20{
+	margin-right: 20px;
+}
+
+.mt10{
+	margin-top: 10px;
+}
+
+.mt15{
+	margin-top: 15px;
+}
+
+.mt20{
+	margin-top: 20px;
+}
+.mb5{
+	margin-bottom: 5px;
+}
+
+.mb15{
+	margin-bottom: 15px;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.mb35{
+	margin-bottom: 35px;
+}
+
+.drawer-content {
+	height: calc(100% - 80px);
+	overflow-y: auto;
+}
+
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: #F0F2F5;
+    background-color: transparent;
 }
 /*定义滚动条轨道 内阴影+圆角*/
 ::-webkit-scrollbar-track {
@@ -263,5 +344,5 @@ a + .el-button {
 ::-webkit-scrollbar-thumb {
     border-radius: 6px;
     height: 10px;
-    background-color: #77a1cb;
+    background-color: rgba(144,147,153,.3);
 }

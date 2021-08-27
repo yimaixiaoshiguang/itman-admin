@@ -1,17 +1,4 @@
 <template>
-	<!-- <div :class="classObj" class="app-wrapper">
-		<div v-if="device === 'mobile' && sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
-		
-		
-		
-		<div :class="{hasTagsView:needTagsView}" class="main-container">
-			<div :class="{ 'fixed-header': fixedHeader }">
-				<navbar />
-				<tags-view v-if="needTagsView" />
-			</div>
-			<app-main />
-		</div>
-	</div> -->
 	<el-container class="mvk-layout">
 		<app-sider>
 			<logo />
@@ -34,7 +21,7 @@
 				</div>
 			</div>
 			<el-footer height="" class="mvk-footer">
-				Footer content
+				Copyright © 2021 广东美物纪数字技术有限公司
 			</el-footer>
 		</app-inside>
 	</el-container>
@@ -70,47 +57,12 @@
 		mixins: [ResizeMixin],
 		computed: {
 			...mapState('settings',['headerStick','tagsView','hamburgerPosition']),
-
-			siderCollapse() {
-				return !this.$store.state.app.sidebar.opened;
-			},
-			device() {
-				return this.$store.state.app.device;
-			},
-			fixedHeader() {
-				return this.$store.state.settings.fixedHeader;
-			},
-			needTagsView() {
-				return this.$store.state.settings.tagsView;
-			},
-			classObj() {
-				return {
-					hideSidebar: !this.sidebar.opened,
-					openSidebar: this.sidebar.opened,
-					withoutAnimation: this.sidebar.withoutAnimation,
-					mobile: this.device === 'mobile'
-				};
-			},
 		},
 		methods: {
-			
-
-			handleClickOutside() {
-				this.$store.dispatch('app/closeSideBar', {
-					withoutAnimation: false
-				});
-			},
-
 			
 		}
 	};
 </script>
 
 <style lang="scss" scoped>
-	.el-divider {
-		background-color: #00c9ff;
-	}
-
-	
-	
 </style>

@@ -1,6 +1,6 @@
 module.exports = {
 
-	title: '数据平台管理系统',
+	title: '美物纪新零售交易平台',
 	
 	logo: require('@/assets/icon_Logo@2x.png'),
 
@@ -16,7 +16,7 @@ module.exports = {
 	 * 默认值：false
 	 * value：[false | true]
 	 */
-	siderFixed:false,
+	siderFixed:true,
 	
 	/**
 	 * 顶部导航栏主题
@@ -30,7 +30,7 @@ module.exports = {
 	 * 默认值为：true
 	 * value：[false | true]
 	 */
-	headerFixed: false,
+	headerFixed: true,
 
 	/**
 	 * 顶部导航栏是否置顶
@@ -50,9 +50,9 @@ module.exports = {
 	   * @type {boolean} true | false
 	   * @description Whether need tagsView
 	   */
-	tagsView: false,
+	tagsView: true,
 
-	tagsFixed: false,
+	tagsFixed: true,
 
 	/**
 	 * @position {string} sidebar | navbar

@@ -1,5 +1,5 @@
 .mvk-layout-header {
-    width: 100%;
+    width: calc(100vw - #{$siderWidth});
     height: $headerHeight;
     color: $sideLightTextColor;
     background: $headerLight;
@@ -20,8 +20,10 @@
 
     &-fixed {
         position: fixed;
+        width: calc(100vw - #{$siderWidth});
         left: $siderWidth;
         top: 0;
+        z-index: 1001;
 
         +.mvk-layout-content {
             padding-top: $headerHeight;
@@ -29,12 +31,13 @@
     }
 
     &-sider-collapse {
+        width: calc(100vw - #{$sideWidthCollapse});
         left: $sideWidthCollapse;
     }
 
     &-stick {
         left: 0;
         z-index: 13;
-        
+        width: 100vw;
     }
 }

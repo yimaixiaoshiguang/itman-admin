@@ -6,14 +6,14 @@ function resolve(dir) {
 	return path.join(__dirname, dir)
 }
 
-const isProduction = process.env.ENV === 'production';
+const isProduction = process.env.ENV !== 'development';
 
 module.exports = {
     assetsDir: 'static',
 
     devServer: {
 		host: '0.0.0.0',
-		port: 7080,
+		port: 7061,
 		open: true, //配置自动启动浏览器
 	},
 

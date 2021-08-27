@@ -3,11 +3,11 @@
 		<transition name="siderLogoFade">
 			<div v-if="collapse" key="collapse" class="sider-logo-link" to="/">
 				<img v-if="logo" :src="logo" class="sider-logo" />
-				<h1 v-else class="sider-title">{{ title }}</h1>
+				<h1 v-else class="sider-title">新零售交易平台</h1>
 			</div>
 			<div v-else key="expand" class="sider-logo-link" to="/">
 				<img v-if="logo" :src="logo" class="sider-logo" />
-				<h1 class="sider-title">{{ title }}</h1>
+				<h1 class="sider-title">新零售交易平台</h1>
 			</div>
 		</transition>
 	</div>
