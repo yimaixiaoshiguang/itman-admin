@@ -1,93 +1,87 @@
 <template>
-	<el-breadcrumb class="app-breadcrumb">
-		<transition-group name="breadcrumb">
-			<el-breadcrumb-item v-for="(item, index) in levelList" :key="item.path">
-				<span v-if="item.redirect === 'noRedirect' || index == levelList.length - 1" class="no-redirect">{{ item.meta.title }}</span>
-				<span v-else >{{ item.meta.title }}</span>
-			</el-breadcrumb-item>
-		</transition-group>
-	</el-breadcrumb>
+    <el-breadcrumb class="app-breadcrumb">
+        <transition-group name="breadcrumb">
+            <el-breadcrumb-item v-for="(item, index) in levelList" :key="item.path">
+                <span
+                    v-if="item.redirect === 'noRedirect' || index == levelList.length - 1"
+                    class="no-redirect"
+                >{{ item.meta.title }}</span>
+                <span v-else>{{ item.meta.title }}</span>
+            </el-breadcrumb-item>
+        </transition-group>
+    </el-breadcrumb>
 </template>
 
 <script>
-	import {
-		mapGetters
-	} from 'vuex';
+import pathToRegexp from 'path-to-regexp'
 
-	import pathToRegexp from 'path-to-regexp';
+export default {
+    data() {
+        return {
+            levelList: null
+        }
+    },
+    computed: {},
+    watch: {
+        $route() {
+            this.getBreadcrumb()
+        }
+    },
+    created() {
+        this.getBreadcrumb()
+    },
+    methods: {
+        getBreadcrumb() {
+            // only show routes with meta.title
+            let matched = this.$route.matched.filter(item => item.meta && item.meta.title)
+            // const first = matched[0];
 
-	export default {
-		data() {
-			return {
-				levelList: null
-			};
-		},
-		computed: {
-		},
-		watch: {
-			$route() {
-				this.getBreadcrumb();
-			}
-		},
-		created() {
-			this.getBreadcrumb();
-		},
-		methods: {
-			getBreadcrumb() {
-				// only show routes with meta.title
-				let matched = this.$route.matched.filter(item => item.meta && item.meta.title);
-				const first = matched[0];
+            //			if (!this.isDashboard(first)) {
+            //				matched = [{ path: '/dashboard', meta: { title: '首頁' } }].concat(matched);
+            //			}
 
-				//			if (!this.isDashboard(first)) {
-				//				matched = [{ path: '/dashboard', meta: { title: '首頁' } }].concat(matched);
-				//			}
-
-				this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false);
-			},
-			isDashboard(route) {
-				const name = route && route.name;
-				if (!name) {
-					return false;
-				}
-				return name.trim().toLocaleLowerCase() === '首頁'.toLocaleLowerCase();
-			},
-			pathCompile(path) {
-				// To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
-				const {
-					params
-				} = this.$route;
-				var toPath = pathToRegexp.compile(path);
-				return toPath(params);
-			},
-			handleLink(item) {
-				const {
-					redirect,
-					path
-				} = item;
-				if (redirect) {
-					this.$router.push(redirect);
-					return;
-				}
-				this.$router.push(this.pathCompile(path));
-			}
-		}
-	};
+            this.levelList = matched.filter(
+                item => item.meta && item.meta.title && item.meta.breadcrumb !== false
+            )
+        },
+        isDashboard(route) {
+            const name = route && route.name
+            if (!name) {
+                return false
+            }
+            return name.trim().toLocaleLowerCase() === '首頁'.toLocaleLowerCase()
+        },
+        pathCompile(path) {
+            // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
+            const { params } = this.$route
+            var toPath = pathToRegexp.compile(path)
+            return toPath(params)
+        },
+        handleLink(item) {
+            const { redirect, path } = item
+            if (redirect) {
+                this.$router.push(redirect)
+                return
+            }
+            this.$router.push(this.pathCompile(path))
+        }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
-	.app-breadcrumb.el-breadcrumb {
-		display: block;
-		font-size: 14px;
-		line-height: 50px;
-		margin-left: 8px;
+.app-breadcrumb.el-breadcrumb {
+	display: block;
+	font-size: 14px;
+	line-height: 50px;
+	margin-left: 8px;
 
-		// .no-redirect {
-		// 	color: #fff;
-		// 	cursor: text;
-		// }
-		
-		::v-deep.el-breadcrumb__inner {
-		    color: rgb(166, 166, 166);
-		}
+	// .no-redirect {
+	// 	color: #fff;
+	// 	cursor: text;
+	// }
+	::v-deep.el-breadcrumb__inner {
+		color: rgb(166, 166, 166);
 	}
+}
 </style>

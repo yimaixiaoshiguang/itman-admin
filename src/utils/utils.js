@@ -1,9 +1,9 @@
 // list 转成树形json
-export function listToTree (list, parentId) {
+export function listToTree(list, parentId) {
     const ret = []
     for (const i in list) {
         if (list[i].parentId === parentId) {
-            const leftList = list.filter((l) => l.id !== list[i].id)
+            const leftList = list.filter(l => l.id !== list[i].id)
             list[i].children = listToTree(leftList, list[i].id)
             ret.push(list[i])
         }
@@ -11,27 +11,27 @@ export function listToTree (list, parentId) {
     return ret
 }
 
-export function treeToList(treeList,res) {
-	// const res = []
-	treeList.forEach(item => {
-		if (item.children.length > 0) {
-			res.concat(treeToList(item.children,res))
-		}
+export function treeToList(treeList, res) {
+    // const res = []
+    treeList.forEach(item => {
+        if (item.children.length > 0) {
+            res.concat(treeToList(item.children, res))
+        }
 
-		res.push(item)
-	})
+        res.push(item)
+    })
 
-	return res
+    return res
 }
 
-//判断一维数组是否存在重复数据
+// 判断一维数组是否存在重复数据
 export function arrRepeat(arr) {
     let repeat = false
 
     var tempArr = new Array()
 
-    for(let i = 0;i< arr.length;i++){
-        if(tempArr[arr[i]]){
+    for (let i = 0;i < arr.length;i++) {
+        if (tempArr[arr[i]]) {
             repeat = true
             break
         }
@@ -61,33 +61,32 @@ export function arrRepeat(arr) {
 	 ...
  ]
  */
- export function arrToJson(arr) {
-	if (arr.length == 0) {
-		return []
-	}
+export function arrToJson(arr) {
+    if (arr.length == 0) {
+        return []
+    }
 
-	let arrValue = []
-	arr.forEach((jsonItem,index) => {
+    let arrValue = []
+    arr.forEach((jsonItem, index) => {
 
-		if(index == 0){
-			Object.keys(jsonItem).forEach((key,value) => {
-				let temp = {}
-				temp.key = key
-				temp.value = [],
-				temp.value.push(jsonItem[key])
-				arrValue.push(temp)
-			})
-		}else {
-			arrValue.forEach(arrItem => {
-				arrItem.value.push(jsonItem[arrItem.key])
-			})
-		}
+        if (index == 0) {
+            Object.keys(jsonItem).forEach(key => {
+                let temp = {}
+                temp.key = key
+                temp.value = [],
+                temp.value.push(jsonItem[key])
+                arrValue.push(temp)
+            })
+        } else {
+            arrValue.forEach(arrItem => {
+                arrItem.value.push(jsonItem[arrItem.key])
+            })
+        }
 
-	})
+    })
 
-	return arrValue
+    return arrValue
 }
-
 
 /**
  * 寻找不满足条件的父节点
@@ -101,25 +100,25 @@ export function arrRepeat(arr) {
  */
 
 export function filterNotExistent(parent, key, children, allArray, notExistent, type) {
-	// console.log(parent);
-	allArray = JSON.parse(JSON.stringify(allArray))
-    if (type == 'down') {//向下寻找
-        if(parent[children] && parent[children].length > 0){
+    // console.log(parent);
+    allArray = JSON.parse(JSON.stringify(allArray))
+    if (type == 'down') { // 向下寻找
+        if (parent[children] && parent[children].length > 0) {
 
             parent[children].forEach(item => {
                 item.parent = parent
-                return filterNotExistent(item, key, children, allArray,notExistent,'down')
+                return filterNotExistent(item, key, children, allArray, notExistent, 'down')
             })
         }
 
-        if(allArray.indexOf(parent[key]) == -1){//不存在
+        if (allArray.indexOf(parent[key]) == -1) { // 不存在
             notExistent.push(parent.parent[key])
-            return filterNotExistent(parent.parent,key, children, allArray,notExistent,'up')
+            return filterNotExistent(parent.parent, key, children, allArray, notExistent, 'up')
         }
-    }else {//向上寻找
-        if(parent.parent){
+    } else { // 向上寻找
+        if (parent.parent) {
             notExistent.push(parent.parent[key])
-            return filterNotExistent(parent.parent,key, children, allArray,notExistent,'up')
+            return filterNotExistent(parent.parent, key, children, allArray, notExistent, 'up')
         }
     }
 
@@ -127,11 +126,11 @@ export function filterNotExistent(parent, key, children, allArray, notExistent, 
 }
 
 export function isJson(obj) {
-    var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
-    return isjson;
+    var isjson = typeof (obj) == 'object' && Object.prototype.toString.call(obj).toLowerCase() == '[object object]' && !obj.length
+    return isjson
 }
 
 export function isArray(arr) {
-	var isarray = typeof (arr) === Array && arr.length > 0
-	return isarray
+    var isarray = typeof (arr) === Array && arr.length > 0
+    return isarray
 }

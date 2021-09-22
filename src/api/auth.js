@@ -5,36 +5,36 @@ const TokenKey = 'eshop-Token'
 const RefreshTokenKey = 'eshop-RToken'
 
 export function getToken() {
-	return sessionStorage.getItem(TokenKey)
+    return sessionStorage.getItem(TokenKey)
 }
 
 export function setToken(token) {
-	return sessionStorage.setItem(TokenKey, token)
+    return sessionStorage.setItem(TokenKey, token)
 }
 
 export function removeToken() {
-	return sessionStorage.removeItem(TokenKey);
+    return sessionStorage.removeItem(TokenKey)
 }	
 
 export function getRefreshToken() {
-	return sessionStorage.getItem(RefreshTokenKey)
+    return sessionStorage.getItem(RefreshTokenKey)
 }
 
 export function setRefreshToken(token) {
-	return sessionStorage.setItem(RefreshTokenKey, token)
+    return sessionStorage.setItem(RefreshTokenKey, token)
 }
 
 export function removeRefreshToken() {
-	return sessionStorage.removeItem(RefreshTokenKey);
+    return sessionStorage.removeItem(RefreshTokenKey)
 }
 
 export function removeAllSessionItem() {
-	Object.keys(sessionStorage).forEach(key => {
-		if(key.indexOf('eshop') > -1){
-			sessionStorage.removeItem(key)
-		}
-	} )
-	return true
+    Object.keys(sessionStorage).forEach(key => {
+        if (key.indexOf('eshop') > -1) {
+            sessionStorage.removeItem(key)
+        }
+    })
+    return true
 }
 
 const expiresAtKey = 'Expiration'
@@ -44,7 +44,7 @@ export function getExpires() {
 }
 
 export function setExpires(expiresAt, expires) {
-    return Cookies.set(expiresAtKey, expiresAt,{expires:expires})
+    return Cookies.set(expiresAtKey, expiresAt, { expires: expires })
 }
 
 export function removeExpires() {

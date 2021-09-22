@@ -1,6 +1,6 @@
 <template>
     <div class="mvk-layout-sider" :class="siderClass">
-        <slot></slot>
+        <slot />
     </div>
 </template>
 
@@ -23,37 +23,34 @@ export default {
     //     },
     // },
     computed: {
-        ...mapState('settings',['siderFixed','siderTheme']),
+        ...mapState('settings', ['siderFixed', 'siderTheme']),
         
         siderCollapse() {
-            return !this.$store.state.app.sidebar.opened;
+            return !this.$store.state.app.sidebar.opened
         },
 
-        siderClass(){
+        siderClass() {
             return {
-                'mvk-layout-sider-collapse':this.siderCollapse,
-                'mvk-layout-sider-dark':this.siderTheme == 'dark',
-                'mvk-layout-sider-fixed':this.siderFixed
+                'mvk-layout-sider-collapse': this.siderCollapse,
+                'mvk-layout-sider-dark': this.siderTheme == 'dark',
+                'mvk-layout-sider-fixed': this.siderFixed
             }
-        },
+        }
     },
     data() {
         return {
             
-        };
+        }
     },
     mounted() {
         
     },
     methods: {
         
-    },
-};
+    }
+}
 </script>
 
 <style lang="scss">
-    
 
-
-	
 </style>

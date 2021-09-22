@@ -1,69 +1,58 @@
 // main-container global css
 #app {
-	height: 100%;
+    height: 100%;
 }
-
 .head-menu {
-	float: left;
+    float: left;
 }
-
-
-
-
 .app-main {
-	height: 100vh;
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-	padding: 15px;
-	background: $mainbg;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    background: $mainbg;
 }
-
-.fixed-header+.app-main {
-  	padding-top: 65px;
+.fixed-header + .app-main {
+    padding-top: 65px;
 }
-
 .hasTagsView {
-	.app-main {
-	    /* 84 = navbar + tags-view = 50 + 34 */
-	    min-height: calc(100vh - 94px);
-	}
-	
-	.fixed-header+.app-main {
-	    padding-top: 94px;
-	}
+    .app-main {
+        /* 84 = navbar + tags-view = 50 + 34 */
+        min-height: calc(100vh - 94px);
+    }
+    .fixed-header + .app-main {
+        padding-top: 94px;
+    }
 }
-
 .app-wrapper {
-	@include clearfix;
-	position: relative;
-	height: 100%;
-	width: 100%;
-	&.mobile.openSidebar {
-		position: fixed;
-		top: 0;
-	}
+    @include clearfix;
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &.mobile.openSidebar {
+        position: fixed;
+        top: 0;
+    }
 }
 .app-imgbg {
-	overflow: hidden;
-	padding: 0;
-	padding-top: 60px !important;
+    overflow: hidden;
+    padding: 0;
+    padding-top: 60px !important;
 }
-
 .drawer-bg {
-	background: #000;
-	opacity: 0.3;
-	width: 100%;
-	top: 0;
-	height: 100%;
-	position: absolute;
-	z-index: 999;
+    background: #000;
+    opacity: 0.3;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
 }
-
 .hideSidebar .fixed-header {
-	width: calc(100% - 54px);
+    width: calc(100% - 54px);
 }
-
 .mobile .fixed-header {
-	width: 100%;
+    width: 100%;
 }

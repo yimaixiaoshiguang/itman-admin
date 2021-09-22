@@ -1,53 +1,50 @@
 <template>
     <div class="mvk-layout-sider" :class="siderClass">
-        <slot></slot>
+        <slot />
     </div>
 </template>
 
 <script>
 export default {
-    name: 'msider',
+    name: 'Msider',
     props: {  
-        siderTheme:{
-            type:String,
-            default:''
+        siderTheme: {
+            type: String,
+            default: ''
         },
-        siderCollapse:{
-            type:Boolean,
-            dafault:false
+        siderCollapse: {
+            type: Boolean,
+            dafault: false
         },
-        siderFixed:{
-            type:Boolean,
-            default:false
-        },
+        siderFixed: {
+            type: Boolean,
+            default: false
+        }
     },
     computed: {
 
-        siderClass(){
+        siderClass() {
             return {
-                'mvk-layout-sider-collapse':this.siderCollapse,
-                'mvk-layout-sider-dark':this.siderTheme == 'dark',
-                'mvk-layout-sider-fixed':this.siderFixed
+                'mvk-layout-sider-collapse': this.siderCollapse,
+                'mvk-layout-sider-dark': this.siderTheme == 'dark',
+                'mvk-layout-sider-fixed': this.siderFixed
             }
-        },
+        }
     },
     data() {
         return {
             
-        };
+        }
     },
     mounted() {
         
     },
     methods: {
         
-    },
-};
+    }
+}
 </script>
 
 <style lang="scss">
-    
 
-
-	
 </style>

@@ -1,19 +1,18 @@
-$primary:#4B5EFF;
-$primaryGradient:linear-gradient(to right, #4F8AFF 0%, #4B5EFF 100%);
+$primary:#4b5eff;
+$primaryGradient:linear-gradient(to right, #4f8aff 0%, #4b5eff 100%);
 
 //左侧栏sider属性
 $siderWidth:250px;
 $sideWidthCollapse:64px;
 
 $sideDarkColor:#222653;
-$sideDarkTextColor:hsla(0,0%,100%,.7);
-$sideDarkTextActivColor:#4F8AFF;
-$sideDarkBgActivColor:linear-gradient(to right, #4F8AFF 0%, #4B5EFF 100%);
-
+$sideDarkTextColor:hsla(0, 0%, 100%, 0.7);
+$sideDarkTextActivColor:#4f8aff;
+$sideDarkBgActivColor:linear-gradient(to right, #4f8aff 0%, #4b5eff 100%);
 
 $sideLightColor:#fff;
 $sideLightTextColor:#515a6e;
-$sideLightTextActivColor:#409EFF;
+$sideLightTextActivColor:#409eff;
 
 //顶部导航栏
 $headerHeight:50px;
@@ -22,13 +21,11 @@ $headerDark:#191a23;
 $headerPrimary:#2173dc;
 
 //内部内容区
-$mainbg:#F5F5FA;
+$mainbg:#f5f5fa;
 $contentPadding:15px;
-
-
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
-    mainbg:$mainbg;
+    mainbg: $mainbg;
 }

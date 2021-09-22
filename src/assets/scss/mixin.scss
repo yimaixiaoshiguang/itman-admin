@@ -1,11 +1,10 @@
 @mixin clearfix {
-    &:after {
+    &::after {
         content: "";
         display: table;
         clear: both;
     }
 }
-
 @mixin scrollBar {
     &::-webkit-scrollbar-track-piece {
         background: #d3dce6;
@@ -18,7 +17,6 @@
         border-radius: 20px;
     }
 }
-
 @mixin relative {
     position: relative;
     width: 100%;

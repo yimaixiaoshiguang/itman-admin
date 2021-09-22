@@ -7,9 +7,7 @@
     z-index: 10;
     background-color: $sideLightColor;
     box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
-    transition: all .2s ease-in-out;
-
-
+    transition: all 0.2s ease-in-out;
     &-fixed {
         position: fixed;
         left: 0;
@@ -20,103 +18,82 @@
         //     padding-left: $siderWidth;
         // }
     }
-
     .mvk-hamburger-container {
         width: $siderWidth !important;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
     }
-
     &-collapse {
         width: $sideWidthCollapse;
         flex: 0 0 $sideWidthCollapse;
-
         .mvk-hamburger-container {
             width: $sideWidthCollapse !important;
         }
     }
-
     &-dark {
         background-color: $sideDarkColor;
         box-shadow: 2px 0 6px rgb(0 21 41 / 35%);
         color: $sideDarkTextColor;
     }
-
-
 }
 
-/**和element ui 有关的样式修改 */
-.mvk-layout-sider{
+/** 和element ui 有关的样式修改 */
+.mvk-layout-sider {
     .el-menu {
         border-right: none;
     }
-
-    .el-submenu__title, .el-menu-item {
+    .el-submenu__title,
+    .el-menu-item {
         color: $sideLightTextColor;
     }
-
-    .el-menu-item, .el-submenu__title {
+    .el-menu-item,
+    .el-submenu__title {
         font-size: 15px;
     }
-
     .el-menu-item.is-active {
         color: $sideLightTextActivColor;
     }
-
     .mvk-menu {
         padding: 0 16px;
-
         &.el-menu--collapse {
             padding: 0 11px;
-
-			.el-submenu__icon-arrow {
-				transition: all .2s ease-in-out;
-				z-index: -1;
-			}
-
+            .el-submenu__icon-arrow {
+                transition: all 0.2s ease-in-out;
+                z-index: -1;
+            }
             .el-submenu__title {
                 padding: 0 9px !important;
             }
         }
-
         .el-tooltip {
             padding: 0 9px !important;
         }
     }
-
     &-dark {
         .el-menu {
             background-color: $sideDarkColor !important;
         }
-
-        .el-submenu__title, .el-menu-item {
+        .el-submenu__title,
+        .el-menu-item {
             color: $sideDarkTextColor;
         }
-
         .el-menu-item.is-active {
             color: #fff;
             background-image: $sideDarkBgActivColor;
         }
-
         .el-menu-item:focus {
-            background-color:transparent;
+            background-color: transparent;
         }
-
-        .el-menu-item:hover, .el-submenu__title:hover {
+        .el-menu-item:hover,
+        .el-submenu__title:hover {
             background-color: rgb(236 245 255 / 30%);
         }
-
-
-
         .el-menu--collapse {
             .el-submenu.is-active {
                 .el-submenu__title {
                     color: #fff;
                     background-image: $sideDarkBgActivColor;
                 }
-
-
             }
         }
     }
-
 }

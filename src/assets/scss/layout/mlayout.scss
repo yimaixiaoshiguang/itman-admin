@@ -3,7 +3,6 @@
 @import './minside.scss';
 @import './mlogo.scss';
 @import './mtags.scss';
-
 .mvk-hamburger-container {
     width: $headerHeight;
     height: $headerHeight;
@@ -11,30 +10,25 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
     &:hover {
         background: rgb(66 161 255 / 30%);
     }
 }
-
 .mvk-layout-content {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-
 .mvk-layout-content-main {
     flex: 1;
     padding: $contentPadding;
 }
-
 .mvk-layout-content-card {
     padding: 15px;
     border-radius: 4px;
-    background-color: #FFFFFF;
+    background-color: #fff;
     box-shadow: 0 0 10px 0 rgb(158 164 194 / 20%);
 }
-
 .mvk-footer {
     text-align: center;
     font-size: 14px;

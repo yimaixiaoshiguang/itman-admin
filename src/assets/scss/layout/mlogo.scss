@@ -1,12 +1,10 @@
 .siderLogoFade-enter-active {
     transition: opacity 1.5s;
 }
-
 .siderLogoFade-enter,
 .siderLogoFade-leave-to {
     opacity: 0;
 }
-
 .mvk-sider-logo-container {
     position: relative;
     width: $siderWidth;
@@ -38,7 +36,7 @@
         padding: 0;
         text-align: center;
         .sider-logo {
-            margin-right: 0px;
+            margin-right: 0;
         }
     }
 }

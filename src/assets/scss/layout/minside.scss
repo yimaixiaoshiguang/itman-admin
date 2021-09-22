@@ -1,14 +1,11 @@
 .mvk-layout-inside {
     background: $mainbg;
     min-height: 100vh;
-    transition: all .3s ease-in-out;
-
+    transition: all 0.3s ease-in-out;
     &-sider-fixed {
         padding-left: $siderWidth;
     }
-
     &-sider-fixed-collapse {
         padding-left: $sideWidthCollapse;
     }
-
 }
