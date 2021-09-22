@@ -48,7 +48,7 @@ module.exports = {
         'no-unneeded-ternary': [2, {
             'defaultAssignment': false
         }],
-        'quotes': [2, 'single'],
+        'quotes': [1, 'single'],
         'semi': [2, 'never'],////语句强制分号结尾
         'space-before-blocks': [2, 'always'],
         'space-before-function-paren': [2, 'never'],
