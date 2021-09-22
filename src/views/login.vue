@@ -34,12 +34,7 @@
                                 clearable
                                 class="inputWidth"
                             >
-                                <icon-svg
-                                    slot="prefix"
-                                    icon="zhanghao"
-                                    size="26"
-                                    class="iconsvg"
-                                />
+                                <icon-svg slot="prefix" icon="zhanghao" size="26" class="iconsvg" />
                             </el-input>
                         </el-form-item>
                         <el-form-item
