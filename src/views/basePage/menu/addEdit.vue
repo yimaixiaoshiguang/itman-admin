@@ -72,14 +72,22 @@
             </el-form-item>
             <el-form-item v-show="dataForm.type != 2" label="是否路由菜单" prop="isShow">
                 <el-radio-group v-model="dataForm.isShow">
-                    <el-radio :label="true">是</el-radio>
-                    <el-radio :label="false">否</el-radio>
+                    <el-radio :label="true">
+                        是
+                    </el-radio>
+                    <el-radio :label="false">
+                        否
+                    </el-radio>
                 </el-radio-group>
             </el-form-item>
             <el-form-item v-show="dataForm.type != 2" label="打开方式" prop="isOpen">
                 <el-radio-group v-model="dataForm.isOpen">
-                    <el-radio :label="true">内部打开</el-radio>
-                    <el-radio :label="false">外部打开</el-radio>
+                    <el-radio :label="true">
+                        内部打开
+                    </el-radio>
+                    <el-radio :label="false">
+                        外部打开
+                    </el-radio>
                 </el-radio-group>
             </el-form-item>
             <el-form-item v-show="dataForm.type !== 0" label="授权标识" prop="perms">
@@ -128,7 +136,9 @@
                 </el-row>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="handleSubmit('dataForm')">保存</el-button>
+                <el-button type="primary" @click="handleSubmit('dataForm')">
+                    保存
+                </el-button>
             </el-form-item>
         </el-form>
     </el-drawer>

@@ -1,6 +1,6 @@
 <template>
     <el-container class="mvk-layout-inside" :class="insideClass">
-        <slot/>
+        <slot />
     </el-container>
 </template>
 
@@ -8,35 +8,35 @@
 export default {
     name: 'Minside',
     props: {  
-        siderFixed:{
-            type:Boolean,
-            default:false
+        siderFixed: {
+            type: Boolean,
+            default: false
         },
-        siderCollapse:{
-            type:Boolean,
-            dafault:false
+        siderCollapse: {
+            type: Boolean,
+            dafault: false
         }
     },
     computed: {  
-        insideClass(){
+        insideClass() {
             return {
-                'mvk-layout-inside-sider-fixed':this.siderFixed,
-                'mvk-layout-inside-sider-fixed-collapse':this.siderFixed && this.siderCollapse
+                'mvk-layout-inside-sider-fixed': this.siderFixed,
+                'mvk-layout-inside-sider-fixed-collapse': this.siderFixed && this.siderCollapse
             }
         }
     },
     data() {
         return {
             
-        };
+        }
     },
     mounted() {
         
     },
     methods: {
         
-    },
-};
+    }
+}
 </script>
 
 <style lang="scss" scoped>

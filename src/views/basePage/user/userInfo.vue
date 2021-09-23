@@ -1,13 +1,17 @@
 <template>
     <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: 15px">
-            <el-button type="primary" round @click="handleAdd"> 新增 </el-button>
+            <el-button type="primary" round @click="handleAdd">
+                新增
+            </el-button>
         </div>
 
         <mvk-table ref="mvkTable" :table-column="tableColumn" :table-data-func="tableDataFunc">
             <template slot="roleNames" slot-scope="{ row }" label="用户角色">
                 <!-- <template > -->
-                <el-tag v-for="(item, index) in row.roleNames" :key="index">{{ item }}</el-tag>
+                <el-tag v-for="(item, index) in row.roleNames" :key="index">
+                    {{ item }}
+                </el-tag>
                 <!-- <span v-else>111</span> -->
                 <!-- {{row.roleNames}} -->
                 <!-- </template> -->
@@ -15,7 +19,9 @@
             <!--自定义操作-->
             <el-table-column label="操作">
                 <template slot-scope="{ row }">
-                    <el-button type="text" size="small" @click="handleEdit(row)">编辑</el-button>
+                    <el-button type="text" size="small" @click="handleEdit(row)">
+                        编辑
+                    </el-button>
                 </template>
             </el-table-column>
         </mvk-table>

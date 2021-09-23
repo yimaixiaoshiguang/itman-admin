@@ -4,10 +4,16 @@
             v-has="'sys:role:add'"
             style="display: flex; justify-content: space-between; margin-bottom: 15px"
         >
-            <el-button type="primary" round @click="handleAdd"> 新增 </el-button>
+            <el-button type="primary" round @click="handleAdd">
+                新增
+            </el-button>
         </div>
 
-        <mvk-table ref="mvkTable" :table-column="tableColumn" :table-data-func="tableDataFunc">
+        <mvk-table
+            ref="mvkTable"
+            :table-column="tableColumn"
+            :table-data-func="tableDataFunc"
+        >
             <!--自定义操作-->
             <el-table-column label="操作">
                 <template slot-scope="{ row }">

@@ -25,7 +25,9 @@
             </el-table-column>
             <el-table-column label="菜单类型" width="100">
                 <template slot-scope="{ row }">
-                    <el-tag :type="tagClass[row.type]">{{ typeList[row.type] }}</el-tag>
+                    <el-tag :type="tagClass[row.type]">
+                        {{ typeList[row.type] }}
+                    </el-tag>
                 </template>
             </el-table-column>
             <el-table-column label="是否左侧菜单" width="120">
@@ -39,12 +41,7 @@
                     {{ row.isOpen ? "内部打开" : "外部打开" }}
                 </template>
             </el-table-column>
-            <el-table-column
-                label="排序"
-                prop="sort"
-                width="50"
-                align="center"
-            />
+            <el-table-column label="排序" prop="sort" width="50" align="center" />
             <el-table-column label="菜单路径" prop="path" />
             <el-table-column label="菜单组件" prop="component" />
             <el-table-column label="授权标识" prop="perms" />

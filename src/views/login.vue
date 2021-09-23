@@ -20,11 +20,20 @@
             <div class="login-right">
                 <div class="login-form">
                     <div class="login-header">
-                        <p class="welcomeText">Welcome {{ title }}</p>
+                        <p class="welcomeText">
+                            Welcome {{ title }}
+                        </p>
                         <!-- <p class="welcomeText sys-title" style="font-weight: 500">{{title}}</p> -->
-                        <p class="sys-title-sup">让数字高度智能，让商业更为灵动，让互联网连接万物</p>
+                        <p class="sys-title-sup">
+                            让数字高度智能，让商业更为灵动，让互联网连接万物
+                        </p>
                     </div>
-                    <el-form ref="loginForm" :model="loginForm" :rules="rules" label-position="top">
+                    <el-form
+                        ref="loginForm"
+                        :model="loginForm"
+                        :rules="rules"
+                        label-position="top"
+                    >
                         <el-form-item prop="principal" label="请输入您的账户">
                             <el-input
                                 v-model="loginForm.principal"
@@ -34,7 +43,12 @@
                                 clearable
                                 class="inputWidth"
                             >
-                                <icon-svg slot="prefix" icon="zhanghao" size="26" class="iconsvg" />
+                                <icon-svg
+                                    slot="prefix"
+                                    icon="zhanghao"
+                                    size="26"
+                                    class="iconsvg"
+                                />
                             </el-input>
                         </el-form-item>
                         <el-form-item
@@ -51,7 +65,12 @@
                                 class="inputWidth"
                                 @keyup.enter.native="loginSubmit('loginForm')"
                             >
-                                <icon-svg slot="prefix" icon="mima" size="26" class="iconsvg" />
+                                <icon-svg
+                                    slot="prefix"
+                                    icon="mima"
+                                    size="26"
+                                    class="iconsvg"
+                                />
                             </el-input>
                         </el-form-item>
                         <el-form-item>
@@ -159,7 +178,8 @@ export default {
             inserted: function(el) {
                 el.addEventListener('keypress', function(e) {
                     e = e || window.event
-                    let charcode = typeof e.charCode == 'number' ? e.charCode : e.keyCode
+                    let charcode =
+                        typeof e.charCode == 'number' ? e.charCode : e.keyCode
                     if (charcode == 13) {
                         var dom = document.getElementsByTagName('input')
                         for (var i = 0; i < dom.length; i++) {
@@ -234,7 +254,7 @@ export default {
 			width: 480px;
 			height: 100%;
 			background-image: linear-gradient(to top, #2e3cb3 0%, #222653 100%);
-			background: url("~@/assets/img/bg/login_bg.png") left;
+			background: url('~@/assets/img/bg/login_bg.png') left;
 			background-size: cover;
 			.text-box {
 				font-size: 40px;

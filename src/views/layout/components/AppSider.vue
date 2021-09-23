@@ -8,7 +8,7 @@
 import { mapState } from 'vuex'
 export default {
     name: 'AppSider',
-    // props: {  
+    // props: {
     //     siderTheme:{
     //         type:String,
     //         default:''
@@ -24,7 +24,7 @@ export default {
     // },
     computed: {
         ...mapState('settings', ['siderFixed', 'siderTheme']),
-        
+
         siderCollapse() {
             return !this.$store.state.app.sidebar.opened
         },
@@ -38,19 +38,11 @@ export default {
         }
     },
     data() {
-        return {
-            
-        }
+        return {}
     },
-    mounted() {
-        
-    },
-    methods: {
-        
-    }
+    mounted() {},
+    methods: {}
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

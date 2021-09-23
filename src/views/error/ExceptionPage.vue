@@ -5,7 +5,9 @@
         </div>
         <div class="content">
             <!-- <h1>{{ config[type].title }}</h1> -->
-            <div class="desc">{{ config[type].desc }}</div>
+            <div class="desc">
+                {{ config[type].desc }}
+            </div>
         </div>
     </div>
 </template>

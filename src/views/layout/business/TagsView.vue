@@ -15,8 +15,12 @@
                     <i class="el-icon-arrow-down el-icon--right" />
                 </el-button>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="others">关闭其他</el-dropdown-item>
-                    <el-dropdown-item command="all">关闭所有</el-dropdown-item>
+                    <el-dropdown-item command="others">
+                        关闭其他
+                    </el-dropdown-item>
+                    <el-dropdown-item command="all">
+                        关闭所有
+                    </el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>

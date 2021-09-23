@@ -1,38 +1,39 @@
 {
-  "name": "mvk-eshop-platform",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "vue-cli-service serve",
-    "alpha": "vue-cli-service build --mode alpha",
-    "build": "vue-cli-service build",
-    "lint": "eslint src --fix",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "axios": "^0.21.0",
-    "echarts": "^5.1.2",
-    "element-ui": "^2.14.1",
-    "js-cookie": "^2.2.1",
-    "mockjs": "^1.1.0",
-    "nprogress": "^0.2.0",
-    "path-to-regexp": "2.4.0",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "compression-webpack-plugin": "^6.1.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^7.18.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+	"name": "mvk-eshop-platform",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "vue-cli-service serve",
+		"alpha": "vue-cli-service build --mode alpha",
+		"build": "vue-cli-service build",
+		"lint": "eslint src/**/*.{js,vue} --fix",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"axios": "^0.21.0",
+		"echarts": "^5.1.2",
+		"element-ui": "^2.14.1",
+		"js-cookie": "^2.2.1",
+		"mockjs": "^1.1.0",
+		"nprogress": "^0.2.0",
+		"path-to-regexp": "2.4.0",
+		"vue": "^2.6.11",
+		"vue-router": "^3.2.0",
+		"vuex": "^3.4.0"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-router": "~4.5.0",
+		"@vue/cli-plugin-vuex": "~4.5.0",
+		"@vue/cli-service": "~4.5.0",
+		"compression-webpack-plugin": "^6.1.1",
+		"eslint": "^7.32.0",
+		"eslint-plugin-vue": "^7.18.0",
+		"husky": "^7.0.2",
+		"lint-staged": "^11.1.2",
+		"prettier": "^2.4.1",
+		"sass": "^1.26.5",
+		"sass-loader": "^8.0.2",
+		"vue-template-compiler": "^2.6.11"
+	}
 }

@@ -1,31 +1,29 @@
 <template>
-	<div>
-
-	</div>
+    <div />
 </template>
 
 <script>
 export default {
-	name: 'dashboard',
+    name: 'Dashboard',
 
-	components: {  },
+    components: {  },
 
-	directives: {  },
+    directives: {  },
 
-	data() {
-		return {
+    data() {
+        return {
 
-		};
-	},
+        }
+    },
 
-	mounted() {
+    mounted() {
 
-	},
+    },
 
-	methods: {
+    methods: {
 
-	},
-};
+    }
+}
 </script>
 
 <style scoped>

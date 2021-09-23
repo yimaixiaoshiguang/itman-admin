@@ -1,6 +1,5 @@
 <template>
-    <el-input v-bind="$attrs" v-on="$listeners" @change="validValue"></el-input>
-    
+    <el-input v-bind="$attrs" v-on="$listeners" @change="validValue" />
 </template>
 
 <script>
@@ -14,7 +13,7 @@ export default {
     data() {
         return {
             
-        };
+        }
     },
 
     mounted() {
@@ -22,13 +21,13 @@ export default {
     },
 
     methods: {
-        validValue(value){
-            //不能输入特殊字符
-            let reTurnValue =  value.replace(/[`~!@#$%^&*()_\-+=<>?:"{}|,./;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/g, '').replace(/\s/g, "")
+        validValue(value) {
+            // 不能输入特殊字符
+            let reTurnValue =  value.replace(/[`~!@#$%^&*()_\-+=<>?:"{}|,./;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/g, '').replace(/\s/g, '')
             this.$emit('input', reTurnValue)
         }
-    },
-};
+    }
+}
 </script>
 
 <style lang="scss" scoped>

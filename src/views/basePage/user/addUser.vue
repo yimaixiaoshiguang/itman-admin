@@ -47,8 +47,12 @@
         </el-form-item>
         <el-form-item>
             <el-button type="primary" class="form-submit" @click="addSubmit('userForm')">
-                <template v-if="addOrEdit == 'add'"> 新增 </template>
-                <template v-else> 保存 </template>
+                <template v-if="addOrEdit == 'add'">
+                    新增
+                </template>
+                <template v-else>
+                    保存
+                </template>
             </el-button>
         </el-form-item>
     </el-form>

@@ -9,10 +9,18 @@
             <span>{{ name }}</span><i class="el-icon-arrow-down el-icon--right" />
         </span>
         <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="dashboard">主页</el-dropdown-item>
-            <el-dropdown-item command="personal">个人中心</el-dropdown-item>
-            <el-dropdown-item command="reset">修改密码</el-dropdown-item>
-            <el-dropdown-item divided command="logout">退出系统</el-dropdown-item>
+            <el-dropdown-item command="dashboard">
+                主页
+            </el-dropdown-item>
+            <el-dropdown-item command="personal">
+                个人中心
+            </el-dropdown-item>
+            <el-dropdown-item command="reset">
+                修改密码
+            </el-dropdown-item>
+            <el-dropdown-item divided command="logout">
+                退出系统
+            </el-dropdown-item>
         </el-dropdown-menu>
     </el-dropdown>
 </template>
