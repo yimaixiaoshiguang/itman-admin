@@ -4,7 +4,7 @@
     width: $siderWidth;
     min-height: 100vh;
     flex: 0 0 $siderWidth;
-    z-index: 10;
+    z-index: 1000;
     background-color: $sideLightColor;
     box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
     transition: all 0.2s ease-in-out;
